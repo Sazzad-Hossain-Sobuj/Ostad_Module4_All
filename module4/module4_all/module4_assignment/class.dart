@@ -6,7 +6,7 @@ abstract class Account {
 
   void deposit(double amount) {
     balance += amount;
-    print('$amount taka is deposited. \nNow the current balance is: $balance');
+    print('$amount taka is deposited. \nNow the current balance is: $balance taka');
   }
 
   void withdraw(double amount);
@@ -23,7 +23,7 @@ class SavingsAccount extends Account {
     if (amount <= balance) {
       balance -= amount;
       balance += balance * interestRate;
-      print('Withdrawn from Savings: $amount \nNow the New Balance: $balance');
+      print('Withdrawn from Savings: $amount taka \nNow the New Balance: $balance taka');
     } else {
       print('Insufficient funds');
     }
@@ -40,7 +40,7 @@ class CurrentAccount extends Account {
   void withdraw(double amount) {
     if (amount <= balance + overdraftLimit) {
       balance -= amount;
-      print('Withdrawn from Current: $amount \nCurrent Balance: $balance');
+      print('Withdrawn from Current: $amount taka \nNew Balance: $balance taka');
     } else {
       print('Insufficient funds');
     }
